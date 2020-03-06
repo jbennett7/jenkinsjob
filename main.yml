@@ -3,28 +3,28 @@
   tasks:
   - ping:
   - fail:
-  - name: Get a list of account VPCs.
-    ec2_vpc_net_facts:
-    register: ec2_vpc_net_info
-  - fail:
-      msg: "FOOBAR FOOBAR"
-  - set_fact:
-      vpc_list: "{{ ec2_vpc_net_info|json_query('vpcs[].vpc_id') }}"
-  - name: Create the cloudformation stack
-    cloudformation:
-      stack_name: "{{ cloudformation_stack_name }}"
-      state: present
-      region: "{{ region }}"
-      disable_roleback: false
-      template: "{{ cloudformation_template_file_url }}"
-      termination_protection: yes
-      capabilities:
-      - CAPABILITY_NAMED_IAM
-      - CAPABILITY_AUTO_EXPAND
-      template_parameters:
-        Division: "{{ division }}"
-        VpcId:  "{{ vpc_list[0] }}"
-        Vpc2Id:  "{{ vpc_list[1]|default('') }}"
-        Vpc3Id:  "{{ vpc_list[2]|default('') }}"
-        Vpc4Id:  "{{ vpc_list[3]|default('') }}"
-        Vpc5Id:  "{{ vpc_list[4]|default('') }}"
+#  - name: Get a list of account VPCs.
+#    ec2_vpc_net_facts:
+#    register: ec2_vpc_net_info
+#  - fail:
+#      msg: "FOOBAR FOOBAR"
+#  - set_fact:
+#      vpc_list: "{{ ec2_vpc_net_info|json_query('vpcs[].vpc_id') }}"
+#  - name: Create the cloudformation stack
+#    cloudformation:
+#      stack_name: "{{ cloudformation_stack_name }}"
+#      state: present
+#      region: "{{ region }}"
+#      disable_roleback: false
+#      template: "{{ cloudformation_template_file_url }}"
+#      termination_protection: yes
+#      capabilities:
+#      - CAPABILITY_NAMED_IAM
+#      - CAPABILITY_AUTO_EXPAND
+#      template_parameters:
+#        Division: "{{ division }}"
+#        VpcId:  "{{ vpc_list[0] }}"
+#        Vpc2Id:  "{{ vpc_list[1]|default('') }}"
+#        Vpc3Id:  "{{ vpc_list[2]|default('') }}"
+#        Vpc4Id:  "{{ vpc_list[3]|default('') }}"
+#        Vpc5Id:  "{{ vpc_list[4]|default('') }}"
