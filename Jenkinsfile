@@ -3,7 +3,7 @@ node {
         role: "${ROLE_NAME}",
     ){
         awsIdentity()
-        sh 'ls'
+        sh 'pwd'
         ansiblePlaybook playbook: 'main.yml'
     }
 }
