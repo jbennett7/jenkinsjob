@@ -6,6 +6,6 @@ node {
 //      ansiblePlaybook(
 //          playbook: 'run_cloudformation.yml',
 //          colorized: true
-        )
+//      )
     }
 }
