@@ -7,7 +7,7 @@
       state: present
       region: "{{ region }}"
       disable_rollback: false
-      template: "{{ cloudformation_template_file_url }}"
+      template_url: "{{ cloudformation_template_file_url }}"
       termination_protection: yes
       capabilities:
       - CAPABILITY_NAMED_IAM
