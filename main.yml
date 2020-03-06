@@ -3,7 +3,7 @@
   tasks:
   - name: Create the cloudformation stack
     cloudformation:
-      stack_name: "splunk-vpc-flowlogs1"
+      stack_name: "splunk-vpc-flowlogs2"
       state: present
       region: "{{ region }}"
       disable_rollback: false
