@@ -1,6 +1,8 @@
 - hosts: localhost
   gather_facts: false
   tasks:
+  - ping:
+  - fail:
   - name: Get a list of account VPCs.
     ec2_vpc_net_facts:
     register: ec2_vpc_net_info
