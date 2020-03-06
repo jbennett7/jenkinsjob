@@ -3,7 +3,7 @@ node {
         role: "${ROLE_NAME}",
     ){
         awsIdentity()
-        ansiblePlaybook(playbook: 'main.yml'){
+        ansiblePlaybook('playbook': 'main.yml'){
 /*          colorizedOutput(true)
             extrasVars {
                 extraVar(region,"${REGION}")
