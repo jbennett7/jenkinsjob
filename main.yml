@@ -6,7 +6,7 @@
       stack_name: "splunk-vpc-flowlogs"
       state: present
       region: "{{ region }}"
-      disable_roleback: false
+      disable_rollback: false
       template: "{{ cloudformation_template_file_url }}"
       termination_protection: yes
       capabilities:
