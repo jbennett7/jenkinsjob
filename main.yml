@@ -8,7 +8,7 @@
       region: "{{ region }}"
       disable_rollback: false
       template_url: "{{ cloudformation_template_file_url }}"
-      termination_protection: no
+      termination_protection: yes
       capabilities:
       - CAPABILITY_NAMED_IAM
       - CAPABILITY_AUTO_EXPAND
