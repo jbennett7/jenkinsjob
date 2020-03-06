@@ -4,8 +4,6 @@
   - name: Get a list of account VPCs.
     ec2_vpc_net_info:
     register: ec2_vpc_net_info
-  - fail:
-      msg: "FOOBAR FOOBAR"
   - set_fact:
       vpc_list: "{{ ec2_vpc_net_info|json_query('vpcs[].vpc_id') }}"
   - name: Create the cloudformation stack
