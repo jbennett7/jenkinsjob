@@ -1,10 +1,8 @@
 node {
     withAWS(
         role: ${ROLE_NAME},
-        roleAccount: ${ROLE_ACCOUNT},
-        externalId: ${ROLE_EXTERNAL_ID},
-        roleSessionName: 'jenkins-splunk-aws'
     ){
+        awsIdentity()
         ansiblePlaybook(
             playbook: 'run_cloudformation.yml',
             colorized: true,
